@@ -1,15 +1,60 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faMagnifyingGlass, faGear, faCirclePlus, faCheck} from '@fortawesome/free-solid-svg-icons';
+import {faClock,} from '@fortawesome/free-regular-svg-icons';
 import classes from './Lnb.module.css';
+
 
 export function Lnb() {
 
+    const colorObj = {
+        grey_color: '#9e9a9a',
+        back_ground: '#e0e0e0',
+    }
+    // 마우스 호버 데이터
+    const hover01 = [false, false, false, false];
+    const [hoverList, setHoverList] = useState(hover01);
+    const eventHover = (state) => {
+        
+        let idx = state.target.value;
+        let list = hover01;
+
+        list.splice(idx, 1, !list[idx]);
+
+        setHoverList(list);
+    }
+
+    // 추후 메뉴 구획 컴포넌트화 예정
+    const lnb01 = [
+        {icon: <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: colorObj.grey_color,}} />, name: '검색' },
+        {icon: <FontAwesomeIcon icon={faClock} style={{color: colorObj.grey_color,}} />, name: '업데이트' },
+        {icon: <FontAwesomeIcon icon={faGear} style={{color: colorObj.grey_color,}} />, name: '설정과 멤버' },
+        {icon: <FontAwesomeIcon icon={faCirclePlus} style={{color: colorObj.grey_color,}} />, name: '새 페이지' },
+    ];
+
     return(
         <div>
-
-            <div class="flex-shrink-0 p-3" style={{width: '280px'}}>
-                
+            <div class="flex-shrink-0" style={{ width: '280px' }}>
                 <ul class="list-unstyled ps-0">
+                    {/* 첫 번째 메뉴 구역 lnb01 */}
+                    {lnb01.map((item, index) => (
+                        <ul className={classes.fir_menu} key={index} style={{ width: '250px' }}>
+                            <ol className={`${'d-flex justify-content-between flex-grow-1'}`}>
+                                <button className={`${'btn'}`} style={{ color: colorObj.grey_color, }}
+                                    onMouseLeave={() => { setHoverList(hover01) }} onMouseOver={eventHover} value={index}>
+                                    {item.icon} {item.name}
+                                </button>
+                                {hoverList[index] ? (<div className={`${'p-1'}`}><FontAwesomeIcon icon={faCheck} /></div>) : ''}
+                            </ol>
+                        </ul>
+                    ))}
+                    <li className={`${'border-top my-3'}`}></li>
+                    {/* 두 번째 메뉴 구역 */}
+                    <div>
+
+                    </div>
+
                     <li class="mb-1">
                         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
                             Home
@@ -64,8 +109,6 @@ export function Lnb() {
                     </li>
                 </ul>
             </div>
-
-
         </div>
     )
 }
