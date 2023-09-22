@@ -145,8 +145,22 @@
   display: flex;
   text-align: start;
   justify-content: flex-start;
+  margin-top: 12px;
+  margin-left: 12px;
   
 }
+
+/* 버튼 스타일 */
+.rounded_button {
+  background-color: #fff; /* 배경색을 하얀색으로 설정 */
+  border: 1px solid #ccc; /* 테두리를 회색으로 설정 */
+  border-radius: 5px; /* 5px만큼 라운딩 */
+  cursor: pointer;
+  width: 35px;
+  height: 20px;
+}
+
+
 .clickable:hover {
   background-color: #e8e8e6;
   cursor: pointer;

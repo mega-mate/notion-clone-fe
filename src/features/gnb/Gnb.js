@@ -20,21 +20,21 @@ export function Gnb() {
 
     return(
         <div className={classes.Gnb_header}>
-            <div class="container">
-                <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
-                    <div></div>
-                    <ul className={`${'nav nav-pills'}`}>
-                        {gnbMenu.map((item, index) => (
-                            <li className={`${'nav-item'}`} key={index}>
-                                <a href='#' className={`${'nav-link'}`} style={{color: txtColor,}}>
-                                    {item.type !== 'txt' ?  (<FontAwesomeIcon icon={item.value} style={{color: txtColor,}} />)  : (item.value)}
-                                </a>
-                            </li>   
-                        ))}
-                    </ul>
+            
+            <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+                <div></div>
+                <ul className={`${'nav nav-pills'}`}>
+                    {gnbMenu.map((item, index) => (
+                        <li className={`${'nav-item'}`} key={index}>
+                            <a href='#' className={`${'nav-link'}`} style={{color: txtColor,}}>
+                                {item.type !== 'txt' ?  (<FontAwesomeIcon icon={item.value} style={{color: txtColor,}} />)  : (item.value)}
+                            </a>
+                        </li>   
+                    ))}
+                </ul>
 
-                </header>
-            </div>
+            </header>
+            
         </div>
     )
 }
