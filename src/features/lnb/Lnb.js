@@ -16,9 +16,9 @@ export function Lnb() {
     // 마우스 호버 데이터
     const hover01 = [false, false, false, false];
     const [hoverList, setHoverList] = useState(hover01);
-    const eventHover = (state) => {
+    const eventHover = (e) => {
         
-        let idx = state.target.value;
+        let idx = e.target.value;
         let list = hover01;
 
         list.splice(idx, 1, !list[idx]);
@@ -38,24 +38,24 @@ export function Lnb() {
         <div>
             <div class="flex-shrink-0" style={{ width: '280px' }}>
                 <ul class="list-unstyled ps-0">
-                    <ul className={classes.fir_menu}>
-                        <ol className={`${'d-flex justify-content-between flex-grow-1'}`}>
+                    <li className={classes.fir_menu}>
+                        <div className={`${'d-flex justify-content-between flex-grow-1'}`}>
                             <button className={`${'btn'}`} style={{ color: colorObj.black_color, }}>USER의 <strong>NOTION</strong> </button>
-                        </ol>
-                    </ul>
+                        </div>
+                    </li>
                 </ul>
                 <ul class="list-unstyled ps-0">
                     {/* 첫 번째 메뉴 구역 lnb01 */}
                     {lnb01.map((item, index) => (
-                        <ul className={classes.fir_menu} key={index} style={{ width: '250px' }}>
-                            <ol className={`${'d-flex justify-content-between flex-grow-1'}`}>
+                        <li className={classes.fir_menu} key={index} style={{ width: '250px' }}>
+                            <div className={`${'d-flex justify-content-between flex-grow-1'}`}>
                                 <button className={`${'btn'}`} style={{ color: colorObj.grey_color, }}
                                     onMouseLeave={() => { setHoverList(hover01) }} onMouseOver={eventHover} value={index}>
                                     {item.icon} {item.name}
                                 </button>
                                 {hoverList[index] ? (<div className={`${'p-1'}`}><FontAwesomeIcon icon={faCheck} /></div>) : ''}
-                            </ol>
-                        </ul>
+                            </div>
+                        </li>
                     ))}
                     <li className={`${'border-top my-3'}`}></li>
                     {/* 두 번째 메뉴 구역 */}
