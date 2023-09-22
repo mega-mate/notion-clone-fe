@@ -8,16 +8,18 @@ import './App.css';
 function App() {
   return (
     <div className='app_container'>
-      <div className='Gnb'>
-        <Gnb />
-      </div>
-      <div className="section_body">
+      <div>
         <div className='Lnb'>
-          <Lnb />
+            <Lnb />
         </div>
-        <div className="section">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Counter />
+        <div className="section_body">
+          <div className='Gnb'>
+            <Gnb />
+          </div>
+          <div className="section">
+            <img src={logo} className="App-logo" alt="logo" />
+            <Counter />
+          </div>
         </div>
       </div>
     </div>

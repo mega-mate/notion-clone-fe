@@ -35,33 +35,34 @@
 
 /* custom */
 .app_container {
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .Gnb {
   text-align: center;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  
 }
 
 .Lnb {
-  /* flex-wrap: wrap; */
   width: 15%;
-  margin: 0;
-  padding: 0;
+  height: 100vh; /* 뷰포트 높이에 맞추기 */
+  float: left;
+  
   
 }
 
 .section_body {
   text-align: center;
-  display: flex;
+  height: 100vh; /* 뷰포트 높이에 맞추기 */
+  
 }
 
 .section {
-  width: 70%;
+  
+  height: 100vh; /* 뷰포트 높이에 맞추기 */
+  width: 100%;
   margin: 0;
   padding: 0;
 }
