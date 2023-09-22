@@ -9,6 +9,7 @@ import classes from './Lnb.module.css';
 export function Lnb() {
 
     const colorObj = {
+        black_color: '#000000',
         grey_color: '#9e9a9a',
         back_ground: '#e0e0e0',
     }
@@ -36,6 +37,13 @@ export function Lnb() {
     return(
         <div>
             <div class="flex-shrink-0" style={{ width: '280px' }}>
+                <ul class="list-unstyled ps-0">
+                    <ul className={classes.fir_menu}>
+                        <ol className={`${'d-flex justify-content-between flex-grow-1'}`}>
+                            <button className={`${'btn'}`} style={{ color: colorObj.black_color, }}>USER의 <strong>NOTION</strong> </button>
+                        </ol>
+                    </ul>
+                </ul>
                 <ul class="list-unstyled ps-0">
                     {/* 첫 번째 메뉴 구역 lnb01 */}
                     {lnb01.map((item, index) => (

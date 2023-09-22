@@ -7,15 +7,15 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className='app_container'>
       <div className='Gnb'>
         <Gnb />
       </div>
-      <div className="App">
+      <div className="section_body">
         <div className='Lnb'>
           <Lnb />
         </div>
-        <div className="App-header">
+        <div className="section">
           <img src={logo} className="App-logo" alt="logo" />
           <Counter />
         </div>

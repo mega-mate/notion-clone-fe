@@ -8,22 +8,31 @@ import {faEllipsisH, } from '@fortawesome/free-solid-svg-icons';
 
 export function Gnb() {
 
+    const txtColor = '#000000';
+
+    const gnbMenu = [
+        {value: '공유', type: 'txt'},
+        {value: faCommentDots, type: 'icon'},
+        {value: faClock, type: 'icon'},
+        {value: faStar, type: 'icon'},
+        {value: faEllipsisH, type: 'icon'},
+    ];
+
     return(
         <div className={classes.Gnb_header}>
             <div class="container">
-                <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                        <span class="fs-4">제목 없음</span>
-                    </a>
-                    
-                    
-                    <ul class="nav nav-pills">
-                        <a href="#" class="nav-link" style={{color: '#000000'}}>공유</a>
-                        <li class="nav-item"><a href="#" class="nav-link"><FontAwesomeIcon icon={faCommentDots} style={{color: "#000000",}} /></a></li>
-                        <li class="nav-item"><a href="#" class="nav-link"><FontAwesomeIcon icon={faClock} style={{color: "#000000",}} /></a></li>
-                        <li class="nav-item"><a href="#" class="nav-link"><FontAwesomeIcon icon={faStar} style={{color: "#000000",}} /></a></li>
-                        <li class="nav-item"><a href="#" class="nav-link"><FontAwesomeIcon icon={faEllipsisH} style={{color: "#000000",}} /></a></li>
+                <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+                    <div></div>
+                    <ul className={`${'nav nav-pills'}`}>
+                        {gnbMenu.map((item, index) => (
+                            <li className={`${'nav-item'}`} key={index}>
+                                <a href='#' className={`${'nav-link'}`} style={{color: txtColor,}}>
+                                    {item.type !== 'txt' ?  (<FontAwesomeIcon icon={item.value} style={{color: txtColor,}} />)  : (item.value)}
+                                </a>
+                            </li>   
+                        ))}
                     </ul>
+
                 </header>
             </div>
         </div>
