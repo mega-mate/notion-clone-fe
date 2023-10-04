@@ -5,8 +5,10 @@ import {faMagnifyingGlass, faGear, faCirclePlus, faCheck, faBackward, faForward}
 import {faClock,} from '@fortawesome/free-regular-svg-icons';
 import classes from './Lnb.module.css';
 
-
 export function Lnb() {
+
+    const dispatch = useDispatch();
+    // const select = useSelector(read);
 
     const colorObj = {
         black_color: '#000000',

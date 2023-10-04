@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/section/Counter';
+import { Create } from './features/create/Create';
 import { Lnb } from './features/lnb/Lnb';
 import { Gnb } from './features/gnb/Gnb';
 import './App.css';
@@ -19,6 +20,7 @@ function App() {
           <div className="section">
             <img src={logo} className="App-logo" alt="logo" />
             <Counter />
+            
           </div>
         </div>
       </div>
